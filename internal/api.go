@@ -15,7 +15,12 @@ import (
 	"github.com/cloudflare/cloudflare-go/v7/pages"
 	"github.com/cloudflare/cloudflare-go/v7/workers"
 )
-
+func panelCompatibilityFlags() []string {
+	if time.Now().UTC().Format("2006-01-02") < "2026-08-04" {
+		return []string{"nodejs_compat"}
+	}
+	return []string{}
+}
 type CfAccount struct {
 	Token  string
 	ID     string
