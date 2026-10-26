@@ -34,10 +34,9 @@ fi
 BINARY="wizard"
 INSTALL_DIR="bpb-wizard"
 ARCHIVE="BPB-Wizard-${OS_LOWER}-${ARCH}.${EXT}"
-WORKER_URL="https://github.com/bia-pain-bache/BPB-Worker-Panel/releases/latest/download/worker.js"
-ARCHIVE_URL="https://github.com/bia-pain-bache/BPB-Wizard/releases/latest/download/${ARCHIVE}"
-
-LATEST_VERSION=$(curl -fsSL https://raw.githubusercontent.com/bia-pain-bache/BPB-Wizard/main/VERSION)
+WORKER_URL="https://raw.githubusercontent.com/mertesswager/BPB-Wizard/main/web/assets/panel-worker.js"
+ARCHIVE_URL="https://github.com/mertesswager/BPB-Wizard/releases/latest/download/${ARCHIVE}"
+LATEST_VERSION=$(curl -fsSL https://raw.githubusercontent.com/mertesswager/BPB-Wizard/main/VERSION)
 
 mkdir -p "${INSTALL_DIR}"
 
