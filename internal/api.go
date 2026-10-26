@@ -182,7 +182,7 @@ func (acc *CfAccount) DeployWorker(ctx context.Context, name string, script io.R
 			Metadata: cloudflare.F(workers.ScriptUpdateParamsMetadata{
 				MainModule:         cloudflare.F("worker.js"),
 				CompatibilityDate:  cloudflare.F(time.Now().UTC().Format("2006-01-02")),
-				CompatibilityFlags: cloudflare.F([]string{"nodejs_compat"}),
+				CompatibilityFlags: cloudflare.F(panelCompatibilityFlags()),
 				Bindings: cloudflare.F([]workers.ScriptUpdateParamsMetadataBindingUnion{
 					workers.ScriptUpdateParamsMetadataBindingsWorkersBindingKindKVNamespace{
 						Name:        cloudflare.F("kv"),
@@ -232,7 +232,7 @@ func (acc *CfAccount) CreatePagesProject(ctx context.Context, name, namespaceID 
 			Production: cloudflare.F(pages.ProjectNewParamsDeploymentConfigsProduction{
 				Browsers:           cloudflare.F(map[string]pages.ProjectNewParamsDeploymentConfigsProductionBrowsers{}),
 				CompatibilityDate:  cloudflare.F(time.Now().UTC().Format("2006-01-02")),
-				CompatibilityFlags: cloudflare.F([]string{"nodejs_compat"}),
+				CompatibilityFlags: cloudflare.F(panelCompatibilityFlags()),
 				KVNamespaces: cloudflare.F(map[string]pages.ProjectNewParamsDeploymentConfigsProductionKVNamespaces{
 					"kv": {NamespaceID: cloudflare.F(namespaceID)},
 				}),
