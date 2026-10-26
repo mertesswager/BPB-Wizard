@@ -93,7 +93,7 @@ export class CFAccount {
         const metadata = {
             main_module: 'worker.js',
             compatibility_date: date,
-            compatibility_flags: ['nodejs_compat'],
+            compatibility_flags: date < '2026-08-04' ? ['nodejs_compat'] : [],
             bindings: [
                 { type: 'kv_namespace', name: 'kv', namespace_id: namespaceId }
             ]
@@ -149,7 +149,7 @@ export class CFAccount {
                 production: {
                     browsers: {},
                     compatibility_date: date,
-                    compatibility_flags: ['nodejs_compat'],
+                    compatibility_flags: date < '2026-08-04' ? ['nodejs_compat'] : [],
                     kv_namespaces: {
                         'kv': { namespace_id: namespaceId }
                     }
