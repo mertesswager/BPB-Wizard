@@ -9,9 +9,9 @@ if ($env:PROCESSOR_ARCHITECTURE -eq "ARM64" -or $env:PROCESSOR_ARCHITEW6432 -eq 
 }
 
 $Archive = "BPB-Wizard-windows-$Arch.zip"
-$ArchiveUrl = "https://github.com/bia-pain-bache/BPB-Wizard/releases/latest/download/$Archive"
-$WorkerUrl = "https://github.com/bia-pain-bache/BPB-Worker-Panel/releases/latest/download/worker.js"
-$LatestVersion = (Invoke-RestMethod -Uri "https://raw.githubusercontent.com/bia-pain-bache/BPB-Wizard/main/VERSION").Trim()
+$ArchiveUrl = "https://github.com/mertesswager/BPB-Wizard/releases/latest/download/$Archive"
+$WorkerUrl = "https://raw.githubusercontent.com/mertesswager/BPB-Wizard/main/web/assets/panel-worker.js"
+$LatestVersion = (Invoke-RestMethod -Uri "https://raw.githubusercontent.com/mertesswager/BPB-Wizard/main/VERSION").Trim()
 
 New-Item -ItemType Directory -Force -Path $InstallDir | Out-Null
 
